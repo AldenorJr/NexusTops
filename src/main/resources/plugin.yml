@@ -1,0 +1,6 @@
+name: NexusTops
+version: 1.0.0
+main: br.com.nexus.tops.main.Main
+commands:
+  settop:
+depend: [ProtocolLib]

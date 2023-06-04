@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NexusTops">
+    <output-path>$USER_HOME$/Desktop/servidor para videos/Servidores/Rankup/plugins</output-path>
+    <root id="archive" name="NexusTops.jar">
+      <element id="module-output" name="NexusTops" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/juliarn/npc-lib/2.6-RELEASE/npc-lib-2.6-RELEASE.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

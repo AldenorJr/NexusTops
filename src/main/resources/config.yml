@@ -1,0 +1,13 @@
+LookAtPlayer: false
+Altura-holograma: 3.1
+# aqui será o holograma para clans e facção
+Holograme:
+  - '&a%posicao%º posição'
+  - '&e[%tagGroup%] %nameGroup%'
+  - '&6%value%'
+# aqui será o holograma para players
+Holograme-player:
+  - '&a%posicao%º posição'
+  - '&a%nickname%'
+  - '&6%value%'
+NPCs:
