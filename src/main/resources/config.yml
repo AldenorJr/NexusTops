@@ -1,5 +1,7 @@
 LookAtPlayer: false
 Altura-holograma: 3.1
+# em minutos, recomenda-se coloca sempre entre 10-30 minutos
+Update-time: 15
 # aqui será o holograma para clans e facção
 Holograme:
   - '&a%posicao%º posição'

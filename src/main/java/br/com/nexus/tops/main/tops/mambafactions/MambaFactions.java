@@ -16,6 +16,8 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.util.List;
+
 public class MambaFactions {
 
     private final Main main;
@@ -60,21 +62,24 @@ public class MambaFactions {
 
                 switch (type) {
                     case MAMBA_FACTIONS_MEMBER_DEATH:
-                        if(mambaFactionsService.getHightKDR().size() >= position) {
-                            mPlayer = mambaFactionsService.getHightMemberDeath().get((position - 1));
-                            value = mPlayer.getKdr();
+                        List<MPlayer> hightMemberDeath = mambaFactionsService.getHightMemberDeath();
+                        if(hightMemberDeath.size() >= position) {
+                            mPlayer = hightMemberDeath.get((position - 1));
+                            value = mPlayer.getDeaths();
                         }
                         break;
                     case MAMBA_FACTIONS_MEMBER_KDR:
-                        if(mambaFactionsService.getHightKills().size() >= position) {
-                            mPlayer = mambaFactionsService.getHightMemberKDR().get((position - 1));
-                            value = mPlayer.getKills();
+                        List<MPlayer> hightMemberKDR = mambaFactionsService.getHightMemberKDR();
+                        if(hightMemberKDR.size() >= position) {
+                            mPlayer = hightMemberKDR.get((position - 1));
+                            value = mPlayer.getKdr();
                         }
                         break;
                     case MAMBA_FACTIONS_MEMBER_KILL:
-                        if(mambaFactionsService.getHightDeath().size() >= position) {
-                            mPlayer = mambaFactionsService.getHightMemberKills().get((position - 1));
-                            value = mPlayer.getDeaths();
+                        List<MPlayer> hightMemberKills = mambaFactionsService.getHightMemberKills();
+                        if(hightMemberKills.size() >= position) {
+                            mPlayer = hightMemberKills.get((position - 1));
+                            value = mPlayer.getKills();
                         }
                         break;
                 }
@@ -109,21 +114,24 @@ public class MambaFactions {
 
                 switch (type) {
                     case MAMBA_FACTIONS_KILL:
-                        if(mambaFactionsService.getHightKDR().size() >= position) {
-                            faction = mambaFactionsService.getHightKDR().get((position - 1));
-                            value = faction.getKdr();
-                        }
-                        break;
-                    case MAMBA_FACTIONS_DEATH:
-                        if(mambaFactionsService.getHightKills().size() >= position) {
-                            faction = mambaFactionsService.getHightKills().get((position - 1));
+                        List<Faction> hightKills = mambaFactionsService.getHightKills();
+                        if(hightKills.size() >= position) {
+                            faction = hightKills.get((position - 1));
                             value = faction.getKills();
                         }
                         break;
-                    case MAMBA_FACTIONS_KDR:
-                        if(mambaFactionsService.getHightDeath().size() >= position) {
-                            faction = mambaFactionsService.getHightDeath().get((position - 1));
+                    case MAMBA_FACTIONS_DEATH:
+                        List<Faction> hightDeath = mambaFactionsService.getHightDeath();
+                        if(hightDeath.size() >= position) {
+                            faction = hightDeath.get((position - 1));
                             value = faction.getDeaths();
+                        }
+                        break;
+                    case MAMBA_FACTIONS_KDR:
+                        List<Faction> hightKDR = mambaFactionsService.getHightKDR();
+                        if(hightKDR.size() >= position) {
+                            faction = hightKDR.get((position - 1));
+                            value = faction.getKdr();
                         }
                         break;
                 }

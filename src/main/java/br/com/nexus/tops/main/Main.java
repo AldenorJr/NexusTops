@@ -22,7 +22,7 @@ public class Main extends JavaPlugin {
             serviceNPC.onReloadNPC();
             long finish = System.currentTimeMillis();
             Bukkit.getConsoleSender().sendMessage(prefix + "§6levou " + (finish - start) + "ms para atualizar os NPCs.");
-        }, 20 * 3, 20 * 60 * 15);
+        }, 20 * 3, 20L * 60 * getConfig().getInt("Update-time"));
         registerCommand();
     }
 

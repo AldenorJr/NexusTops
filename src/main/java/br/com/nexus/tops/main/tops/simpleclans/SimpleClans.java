@@ -12,6 +12,8 @@ import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 
+import java.util.List;
+
 public class SimpleClans {
 
     private final Main main;
@@ -59,20 +61,23 @@ public class SimpleClans {
 
                 switch (type) {
                     case SIMPLE_CLANS_MEMBER_DEATH:
-                        if(serviceSimpleClans.getHightMemberDeath().size() >= position) {
-                            clanPlayer = serviceSimpleClans.getHightMemberDeath().get((position - 1));
+                        List<ClanPlayer> hightMemberDeath = serviceSimpleClans.getHightMemberDeath();
+                        if(hightMemberDeath.size() >= position) {
+                            clanPlayer = hightMemberDeath.get((position - 1));
                             value = clanPlayer.getDeaths();
                         }
                         break;
                     case SIMPLE_CLANS_MEMBER_KILL:
-                        if(serviceSimpleClans.getHightMemberKills().size() >= position) {
-                            clanPlayer = serviceSimpleClans.getHightMemberKills().get((position - 1));
+                        List<ClanPlayer> hightMemberKills = serviceSimpleClans.getHightMemberKills();
+                        if(hightMemberKills.size() >= position) {
+                            clanPlayer = hightMemberKills.get((position - 1));
                             value = serviceSimpleClans.getAllMemberKills(clanPlayer);
                         }
                         break;
                     case SIMPLE_CLANS_MEMBER_KDR:
-                        if(serviceSimpleClans.getHightMemberKDR().size() >= position) {
-                            clanPlayer = serviceSimpleClans.getHightMemberKDR().get((position - 1));
+                        List<ClanPlayer> hightMemberKDR = serviceSimpleClans.getHightMemberKDR();
+                        if(hightMemberKDR.size() >= position) {
+                            clanPlayer = hightMemberKDR.get((position - 1));
                             value = clanPlayer.getKDR();
                         }
                         break;
@@ -108,20 +113,23 @@ public class SimpleClans {
 
                 switch (type) {
                     case SIMPLE_CLANS_KDR:
-                        if(serviceSimpleClans.getHightKDR().size() >= position) {
-                            clan = serviceSimpleClans.getHightKDR().get((position - 1));
+                        List<Clan> hightKDR = serviceSimpleClans.getHightKDR();
+                        if(hightKDR.size() >= position) {
+                            clan = hightKDR.get((position - 1));
                             value = clan.getTotalKDR();
                         }
                         break;
                     case SIMPLE_CLANS_KILL:
-                        if(serviceSimpleClans.getHightKills().size() >= position) {
-                            clan = serviceSimpleClans.getHightKills().get((position - 1));
+                        List<Clan> hightKills = serviceSimpleClans.getHightKills();
+                        if(hightKills.size() >= position) {
+                            clan = hightKills.get((position - 1));
                             value = serviceSimpleClans.getAllKills(clan);
                         }
                         break;
                     case SIMPLE_CLANS_DEATH:
-                        if(serviceSimpleClans.getHightDeath().size() >= position) {
-                            clan = serviceSimpleClans.getHightDeath().get((position - 1));
+                        List<Clan> hightDeath = serviceSimpleClans.getHightDeath();
+                        if(hightDeath.size() >= position) {
+                            clan = hightDeath.get((position - 1));
                             value = clan.getTotalDeaths();
                         }
                         break;

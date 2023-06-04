@@ -13,6 +13,8 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
+import java.util.List;
+
 public class Vault {
 
     private final Main main;
@@ -52,8 +54,9 @@ public class Vault {
                 double value = 0;
 
                 OfflinePlayer offlinePlayer = null;
-                if (serviceVault.getTopMoney().size() >= position) {
-                    offlinePlayer = serviceVault.getTopMoney().get((position - 1));
+                List<OfflinePlayer> topMoney = serviceVault.getTopMoney();
+                if (topMoney.size() >= position) {
+                    offlinePlayer = topMoney.get((position - 1));
                 }
                 if(offlinePlayer != null) {
                     npcName = offlinePlayer.getName();
