@@ -26,8 +26,10 @@ public class CommandSetNPC implements CommandExecutor {
             return true;
         }
         Player player = (Player) commandSender;
-        //settop <modalidade> <posiãço>
-
+        if(player.hasPermission("nexustop.admin.use")) {
+            player.sendMessage("§cVocê não tem permissão para executar esse comando.");
+            return true;
+        }
         if (args.length < 1) {
             player.sendMessage("§eVocê deve selecionar pelo menos um top especifico.");
             modalidadeSend(player);
