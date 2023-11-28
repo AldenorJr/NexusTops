@@ -26,7 +26,7 @@ public class CommandSetNPC implements CommandExecutor {
             return true;
         }
         Player player = (Player) commandSender;
-        if(player.hasPermission("nexustop.admin.use")) {
+        if(!player.hasPermission("nexustop.admin.use")) {
             player.sendMessage("§cVocê não tem permissão para executar esse comando.");
             return true;
         }
