@@ -48,11 +48,7 @@ public class CommandSetNPC implements CommandExecutor {
             modalidadeSend(player);
             return true;
         }
-        if(args.length < 2) {
-            player.sendMessage("§cPor favor informe a posição que você deseja, um valor entre 1 e 10.");
-            return true;
-        }
-        if(args.length > 2) {
+        if(args.length != 3) {
             player.sendMessage("§cVocê deve usar o comando da seguinte forma:§7 " +
                     "/settop <modalidade> <adicionar/remover> <posição>");
             return true;
